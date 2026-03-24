@@ -1,0 +1,1487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Law Office of Paul J. Raymond, LLC | Buena Vista, Colorado</title>
+  <meta name="description" content="A general practice law firm serving rural Colorado's legal needs. Water rights, property law, civil litigation, and more in Buena Vista, CO.">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black: #1a1a1a;
+      --dark: #2a2a2a;
+      --gray-800: #333333;
+      --gray-600: #666666;
+      --gray-400: #999999;
+      --gray-300: #cccccc;
+      --gray-200: #e5e5e5;
+      --gray-100: #f5f5f5;
+      --white: #ffffff;
+
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-body: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+      --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-weight: 400;
+      color: var(--dark);
+      background: var(--white);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ── Scroll Reveal ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ═══════════════════════════════════════
+       NAVIGATION
+       ═══════════════════════════════════════ */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 1.25rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.4s, box-shadow 0.4s, padding 0.4s;
+    }
+    .nav.scrolled {
+      background: rgba(255, 255, 255, 0.97);
+      box-shadow: 0 1px 0 var(--gray-200);
+      padding: 0.85rem 3rem;
+      backdrop-filter: blur(12px);
+    }
+    .nav.scrolled .nav-brand { color: var(--black); }
+    .nav.scrolled .nav-brand span { color: var(--gray-400); }
+    .nav.scrolled .nav-links a { color: var(--gray-600); }
+    .nav.scrolled .nav-links a:hover { color: var(--black); }
+    .nav.scrolled .nav-cta { border-color: var(--black); color: var(--black) !important; }
+    .nav.scrolled .nav-cta:hover { background: var(--black); color: var(--white) !important; }
+    .nav.scrolled .nav-toggle span { background: var(--black); }
+
+    .nav-brand {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: 1.2rem;
+      color: var(--white);
+      letter-spacing: 0.01em;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.4s;
+    }
+    .nav-brand svg {
+      width: 20px;
+      height: 20px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.5;
+    }
+    .nav-brand span {
+      display: block;
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.5);
+      margin-top: 2px;
+      transition: color 0.4s;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+      align-items: center;
+    }
+    .nav-links a {
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: 0.82rem;
+      letter-spacing: 0.02em;
+      color: rgba(255, 255, 255, 0.8);
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--white); }
+
+    .nav-cta {
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 0.78rem;
+      letter-spacing: 0.02em;
+      color: var(--white) !important;
+      background: transparent;
+      padding: 0.55rem 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: 100px;
+      cursor: pointer;
+      transition: background 0.3s, border-color 0.3s, color 0.3s;
+    }
+    .nav-cta:hover {
+      background: var(--white);
+      border-color: var(--white);
+      color: var(--black) !important;
+    }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 24px; height: 2px;
+      background: var(--white);
+      transition: transform 0.3s, opacity 0.3s, background 0.4s;
+    }
+
+    /* ═══════════════════════════════════════
+       HERO
+       ═══════════════════════════════════════ */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 60%, rgba(0, 0, 0, 0.65) 100%),
+        url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 3rem 5rem;
+      max-width: 800px;
+    }
+
+    .hero-pretitle {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 1s 0.3s var(--ease-out-expo) forwards;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(2.8rem, 5.5vw, 4.2rem);
+      line-height: 1.15;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 1s 0.5s var(--ease-out-expo) forwards;
+    }
+    .hero-title .underline {
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 6px;
+    }
+    .hero-title em {
+      font-style: italic;
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 6px;
+    }
+
+    .hero-subtitle {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.65);
+      max-width: 480px;
+      margin-bottom: 2.5rem;
+      opacity: 0;
+      animation: fadeUp 1s 0.7s var(--ease-out-expo) forwards;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 1s 0.9s var(--ease-out-expo) forwards;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .btn-primary {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 0.82rem;
+      letter-spacing: 0.02em;
+      color: var(--black);
+      background: var(--white);
+      padding: 0.85rem 2rem;
+      border: none;
+      border-radius: 100px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+    }
+    .btn-primary:hover {
+      background: var(--gray-100);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn-text {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: 0.85rem;
+      color: var(--white);
+      transition: opacity 0.3s;
+    }
+    .btn-text:hover { opacity: 0.7; }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 3rem;
+      right: 3rem;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 100px;
+      padding: 0.5rem 1rem;
+      opacity: 0;
+      animation: fadeUp 1s 1.2s var(--ease-out-expo) forwards;
+      cursor: pointer;
+      transition: border-color 0.3s;
+    }
+    .hero-scroll:hover { border-color: rgba(255, 255, 255, 0.6); }
+    .hero-scroll svg {
+      width: 14px; height: 14px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+    }
+
+    /* ═══════════════════════════════════════
+       ABOUT
+       ═══════════════════════════════════════ */
+    .about {
+      padding: 7rem 3rem;
+      background: var(--white);
+    }
+
+    .about-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: 0.82rem;
+      color: var(--gray-600);
+      margin-bottom: 3rem;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--gray-200);
+      margin-left: 2rem;
+    }
+
+    .about-text {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      line-height: 1.45;
+      color: var(--black);
+      max-width: 850px;
+      margin: 0 auto 4rem;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+    }
+
+    .stat-card {
+      padding: 2rem 1.5rem;
+      border: 1px solid var(--gray-200);
+      border-right: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 140px;
+    }
+    .stat-card:last-child { border-right: 1px solid var(--gray-200); }
+
+    .stat-number {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      color: var(--black);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: 0.85rem;
+      color: var(--gray-400);
+      margin-top: 1rem;
+    }
+
+    /* ═══════════════════════════════════════
+       PRACTICE AREAS (Services)
+       ═══════════════════════════════════════ */
+    .practice {
+      padding: 5rem 3rem 7rem;
+      background: var(--white);
+    }
+
+    .practice-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .practice-item {
+      display: grid;
+      grid-template-columns: auto 1fr 1.2fr;
+      gap: 2rem;
+      padding: 3rem 0;
+      border-top: 1px solid var(--gray-200);
+      align-items: start;
+    }
+    .practice-item:last-child {
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .practice-number {
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: 0.78rem;
+      color: var(--gray-400);
+      padding-top: 0.35rem;
+    }
+
+    .practice-name {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      color: var(--black);
+      line-height: 1.2;
+    }
+
+    .practice-desc {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: var(--gray-600);
+      max-width: 420px;
+    }
+
+    .practice-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 0.85rem;
+      color: var(--black);
+      margin-top: 1rem;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      transition: opacity 0.3s;
+    }
+    .practice-link:hover { opacity: 0.6; }
+
+    /* ═══════════════════════════════════════
+       ABOUT PAUL (Meet the Attorney)
+       ═══════════════════════════════════════ */
+    .about-paul {
+      padding: 7rem 3rem;
+      background: var(--gray-100);
+    }
+
+    .about-paul-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .about-paul-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 3rem;
+      gap: 2rem;
+    }
+
+    .about-paul-title {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      line-height: 1.2;
+      color: var(--black);
+      max-width: 500px;
+    }
+
+    .about-paul-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .about-paul-images {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .about-paul-images img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      transition: transform 0.4s var(--ease-out-expo);
+    }
+    .about-paul-images img:hover {
+      transform: scale(1.02);
+    }
+    .about-paul-images img:first-child {
+      grid-column: 1 / -1;
+      height: 300px;
+    }
+
+    .paul-info-card {
+      background: var(--white);
+      padding: 2.5rem;
+      border: 1px solid var(--gray-200);
+    }
+
+    .paul-info-card h3 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: 1.6rem;
+      color: var(--black);
+      margin-bottom: 1.25rem;
+    }
+
+    .paul-info-card p {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: 0.92rem;
+      line-height: 1.8;
+      color: var(--gray-600);
+      margin-bottom: 1rem;
+    }
+
+    .paul-credentials {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--gray-200);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .credential {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+    .credential-icon {
+      flex-shrink: 0;
+      width: 32px; height: 32px;
+      border: 1px solid var(--gray-200);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .credential-icon svg {
+      width: 14px; height: 14px;
+      stroke: var(--gray-600);
+      fill: none;
+      stroke-width: 1.5;
+    }
+    .credential-text {
+      font-size: 0.88rem;
+      line-height: 1.5;
+      color: var(--gray-600);
+    }
+    .credential-text strong {
+      color: var(--black);
+      font-weight: 500;
+    }
+
+    /* ═══════════════════════════════════════
+       TESTIMONIALS
+       ═══════════════════════════════════════ */
+    .testimonials {
+      padding: 7rem 3rem;
+      background: var(--white);
+    }
+
+    .testimonials-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .testimonials-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 3rem;
+    }
+
+    .testimonials-title {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      line-height: 1.2;
+      color: var(--black);
+      max-width: 500px;
+    }
+
+    .testimonials-link {
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: 0.85rem;
+      color: var(--gray-600);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      transition: color 0.3s;
+      white-space: nowrap;
+    }
+    .testimonials-link:hover { color: var(--black); }
+
+    .testimonial-card {
+      display: grid;
+      grid-template-columns: 240px 1fr auto;
+      gap: 2rem;
+      padding: 2rem 0;
+      border-top: 1px solid var(--gray-200);
+      align-items: start;
+    }
+    .testimonial-card:last-child {
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .testimonial-image {
+      width: 240px;
+      height: 200px;
+      object-fit: cover;
+      border: 1px solid var(--gray-200);
+    }
+
+    .testimonial-content {
+      padding-top: 0.25rem;
+    }
+
+    .testimonial-text {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: 0.92rem;
+      line-height: 1.8;
+      color: var(--gray-600);
+      margin-bottom: 1.5rem;
+    }
+
+    .testimonial-author {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.92rem;
+      color: var(--black);
+    }
+    .testimonial-role {
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: 0.82rem;
+      color: var(--gray-400);
+      margin-top: 0.15rem;
+    }
+
+    .testimonial-stat {
+      text-align: right;
+      padding-top: 0.5rem;
+    }
+    .testimonial-stat-number {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      color: var(--black);
+      line-height: 1;
+    }
+    .testimonial-stat-label {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      color: var(--gray-400);
+      margin-top: 0.25rem;
+    }
+
+    /* ═══════════════════════════════════════
+       CTA SECTION
+       ═══════════════════════════════════════ */
+    .cta-section {
+      padding: 7rem 3rem;
+      background: var(--black);
+      text-align: center;
+    }
+
+    .cta-title {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(2.5rem, 5vw, 3.8rem);
+      line-height: 1.2;
+      color: var(--white);
+      margin-bottom: 2.5rem;
+    }
+    .cta-title em {
+      font-style: italic;
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 6px;
+    }
+
+    .cta-actions {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-white {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 0.82rem;
+      letter-spacing: 0.02em;
+      color: var(--black);
+      background: var(--white);
+      padding: 0.85rem 2rem;
+      border: none;
+      border-radius: 100px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .btn-white:hover {
+      background: var(--gray-100);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline-dark {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: 0.82rem;
+      color: var(--white);
+      background: transparent;
+      padding: 0.85rem 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 100px;
+      cursor: pointer;
+      transition: border-color 0.3s, transform 0.2s;
+    }
+    .btn-outline-dark:hover {
+      border-color: rgba(255, 255, 255, 0.6);
+      transform: translateY(-2px);
+    }
+
+    /* ═══════════════════════════════════════
+       CONTACT
+       ═══════════════════════════════════════ */
+    .contact {
+      padding: 7rem 3rem;
+      background: var(--white);
+    }
+
+    .contact-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .contact-info { padding-top: 0.5rem; }
+
+    .contact-title {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(2rem, 3vw, 2.5rem);
+      color: var(--black);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .contact-subtitle {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: 0.95rem;
+      color: var(--gray-600);
+      margin-bottom: 2.5rem;
+      line-height: 1.7;
+    }
+
+    .contact-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+    .contact-detail-icon {
+      flex-shrink: 0;
+      width: 44px; height: 44px;
+      background: var(--black);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .contact-detail-icon svg {
+      width: 18px; height: 18px;
+      stroke: var(--white);
+      fill: none;
+      stroke-width: 1.5;
+    }
+    .contact-detail-label {
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-bottom: 0.25rem;
+    }
+    .contact-detail-value {
+      font-size: 1.05rem;
+      color: var(--black);
+      line-height: 1.5;
+    }
+    .contact-detail-value a { transition: color 0.3s; }
+    .contact-detail-value a:hover { color: var(--gray-600); }
+
+    .contact-form-wrapper {
+      background: var(--gray-100);
+      padding: 3rem;
+      border: 1px solid var(--gray-200);
+    }
+
+    .contact-form-title {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: 1.5rem;
+      color: var(--black);
+      margin-bottom: 0.5rem;
+    }
+    .contact-form-subtitle {
+      font-size: 0.88rem;
+      color: var(--gray-600);
+      margin-bottom: 2rem;
+    }
+
+    .form-group { margin-bottom: 1.5rem; }
+    .form-group label {
+      display: block;
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray-600);
+      margin-bottom: 0.5rem;
+    }
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.9rem 1rem;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--black);
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      outline: none;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: var(--gray-300); }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--black);
+      box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.04);
+    }
+    .form-group textarea { resize: vertical; min-height: 130px; }
+
+    .form-consent {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.82rem;
+      line-height: 1.5;
+      color: var(--gray-600);
+    }
+    .form-consent input[type="checkbox"] {
+      width: auto;
+      margin-top: 3px;
+      flex-shrink: 0;
+      accent-color: var(--black);
+    }
+
+    .form-submit {
+      width: 100%;
+      padding: 1rem;
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 0.82rem;
+      letter-spacing: 0.02em;
+      color: var(--white);
+      background: var(--black);
+      border: none;
+      border-radius: 100px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .form-submit:hover { background: var(--gray-800); transform: translateY(-1px); }
+
+    /* ═══════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════ */
+    .footer {
+      background: var(--black);
+      padding: 4rem 3rem 2rem;
+      border-top: 1px solid var(--gray-200);
+    }
+
+    .footer-inner { max-width: 1100px; margin: 0 auto; }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-brand-name {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: 1.2rem;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+    .footer-brand-desc {
+      font-size: 0.88rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.4);
+      max-width: 320px;
+    }
+
+    .footer-heading {
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.5);
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .footer-links a {
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.5);
+      transition: color 0.3s;
+    }
+    .footer-links a:hover { color: var(--white); }
+
+    .footer-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.5);
+    }
+    .footer-contact-item svg {
+      width: 14px; height: 14px;
+      stroke: rgba(255, 255, 255, 0.4);
+      fill: none;
+      stroke-width: 1.5;
+      flex-shrink: 0;
+    }
+    .footer-contact-item a {
+      color: rgba(255, 255, 255, 0.5);
+      transition: color 0.3s;
+    }
+    .footer-contact-item a:hover { color: var(--white); }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 2rem;
+    }
+    .footer-copy {
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.25);
+    }
+    .footer-badges {
+      display: flex;
+      gap: 0.75rem;
+    }
+    .footer-badge {
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 0.35rem 0.75rem;
+      border-radius: 100px;
+    }
+
+    /* ═══════════════════════════════════════
+       RESPONSIVE
+       ═══════════════════════════════════════ */
+    @media (max-width: 900px) {
+      .nav { padding: 1.25rem 2rem; }
+      .nav.scrolled { padding: 0.85rem 2rem; }
+      .hero-content { padding: 0 2rem 4rem; }
+      .about, .practice, .about-paul, .testimonials, .cta-section, .contact { padding-left: 2rem; padding-right: 2rem; }
+
+      .about-paul-grid { grid-template-columns: 1fr; }
+      .about-paul-images img:first-child { height: 250px; }
+
+      .practice-item {
+        grid-template-columns: auto 1fr;
+        gap: 1rem;
+      }
+      .practice-desc { grid-column: 1 / -1; max-width: none; }
+
+      .testimonial-card {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      .testimonial-image { width: 100%; height: 200px; }
+      .testimonial-stat { text-align: left; }
+
+      .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+
+      .stats-grid { grid-template-columns: 1fr; }
+      .stat-card { border-right: 1px solid var(--gray-200); border-bottom: none; }
+      .stat-card:last-child { border-bottom: 1px solid var(--gray-200); }
+    }
+
+    @media (max-width: 680px) {
+      .nav { padding: 1rem 1.5rem; }
+      .nav.scrolled { padding: 0.75rem 1.5rem; }
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        background: rgba(255, 255, 255, 0.98);
+        padding: 1.5rem 2rem;
+        gap: 1.25rem;
+        backdrop-filter: blur(12px);
+        box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+      }
+      .nav-links.open a { color: var(--black); }
+      .nav-links.open .nav-cta {
+        border-color: var(--black);
+        color: var(--black) !important;
+        width: fit-content;
+      }
+      .nav-toggle { display: flex; }
+
+      .hero-content { padding: 0 1.5rem 3rem; }
+      .hero-title { font-size: 2.2rem; }
+      .hero-scroll { display: none; }
+      .about, .practice, .about-paul, .testimonials, .cta-section, .contact { padding-left: 1.5rem; padding-right: 1.5rem; }
+
+      .practice-item {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+      }
+      .practice-number { display: none; }
+
+      .about-paul-header { flex-direction: column; }
+      .about-paul-images img { height: 180px; }
+      .about-paul-images img:first-child { height: 200px; }
+      .paul-info-card { padding: 2rem 1.5rem; }
+
+      .contact-form-wrapper { padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════ NAVIGATION ═══════════ -->
+  <nav class="nav" id="nav">
+    <a href="#" class="nav-brand">
+      Paul J. Raymond
+      <span>Attorney at Law</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#practice">Practice Areas</a></li>
+      <li><a href="#paul">About Paul</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#contact" class="nav-cta">Schedule Consultation</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ═══════════ HERO ═══════════ -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-pretitle">The Law Office of Paul J. Raymond, LLC</div>
+      <h1 class="hero-title">Trusted <span class="underline">Counsel.</span><br>Smart <em>Strategy.</em><br>Just for <em>Rural Colorado.</em></h1>
+      <p class="hero-subtitle">Whether you need help with water rights, property law, or civil litigation, we provide flexible, low-cost legal services to rural communities.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Schedule a Consultation</a>
+        <a href="#practice" class="btn-text">Practice Areas</a>
+      </div>
+    </div>
+    <a href="#about" class="hero-scroll">
+      Scroll Down
+      <svg viewBox="0 0 24 24"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+    </a>
+  </section>
+
+  <!-- ═══════════ ABOUT THE FIRM ═══════════ -->
+  <section class="about" id="about">
+    <div class="about-inner">
+      <div class="section-label reveal">About Us</div>
+      <p class="about-text reveal">
+        We combine deep legal expertise, a commitment to rural communities, and a hands-on approach to help you navigate Colorado's unique legal landscape. With a foundation in water rights, property law, and civil litigation, we deliver results that matter&mdash;whether it's protecting your land, resolving a dispute, or planning for the future.
+      </p>
+
+      <div class="stats-grid reveal">
+        <div class="stat-card">
+          <div class="stat-number">2</div>
+          <div class="stat-label">State Bar Licenses</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">6+</div>
+          <div class="stat-label">Practice Areas</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Dedicated to Rural Colorado</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ PRACTICE AREAS ═══════════ -->
+  <section class="practice" id="practice">
+    <div class="practice-inner">
+      <div class="section-label reveal">What We Do</div>
+
+      <div class="practice-item reveal">
+        <div class="practice-number">[01]</div>
+        <h3 class="practice-name">Water Rights</h3>
+        <div>
+          <p class="practice-desc">Expert guidance on water and property rights in Colorado's unique landscape. We help you understand and protect your water resources.</p>
+          <a href="#contact" class="practice-link">Learn More</a>
+        </div>
+      </div>
+
+      <div class="practice-item reveal">
+        <div class="practice-number">[02]</div>
+        <h3 class="practice-name">Landlord Tenant Law</h3>
+        <div>
+          <p class="practice-desc">Resolving landlord and tenant issues with fairness and clarity. From lease agreements to eviction proceedings, we have you covered.</p>
+          <a href="#contact" class="practice-link">Learn More</a>
+        </div>
+      </div>
+
+      <div class="practice-item reveal">
+        <div class="practice-number">[03]</div>
+        <h3 class="practice-name">Land Use &amp; Real Property</h3>
+        <div>
+          <p class="practice-desc">Guidance on property transactions, zoning, easements, and real estate matters across rural Colorado.</p>
+          <a href="#contact" class="practice-link">Learn More</a>
+        </div>
+      </div>
+
+      <div class="practice-item reveal">
+        <div class="practice-number">[04]</div>
+        <h3 class="practice-name">Civil Litigation</h3>
+        <div>
+          <p class="practice-desc">Skilled representation in civil matters, from contract disputes to personal injury claims.</p>
+          <a href="#contact" class="practice-link">Learn More</a>
+        </div>
+      </div>
+
+      <div class="practice-item reveal">
+        <div class="practice-number">[05]</div>
+        <h3 class="practice-name">Traffic &amp; DUI Defense</h3>
+        <div>
+          <p class="practice-desc">Dedicated defense for traffic violations and DUI charges, protecting your rights and driving record.</p>
+          <a href="#contact" class="practice-link">Learn More</a>
+        </div>
+      </div>
+
+      <div class="practice-item reveal">
+        <div class="practice-number">[06]</div>
+        <h3 class="practice-name">Estate Planning &amp; Family Law</h3>
+        <div>
+          <p class="practice-desc">Wills, trusts, and family legal matters handled with care and sensitivity for your family's future.</p>
+          <a href="#contact" class="practice-link">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ ABOUT PAUL ═══════════ -->
+  <section class="about-paul" id="paul">
+    <div class="about-paul-inner">
+      <div class="about-paul-header reveal">
+        <h2 class="about-paul-title">Meet the Attorney Behind the Practice</h2>
+      </div>
+
+      <div class="about-paul-grid">
+        <div class="about-paul-images reveal">
+          <img src="paul-canyon.png" alt="Paul working remotely in a canyon in Colorado">
+          <img src="paul-rafting.png" alt="Paul enjoying whitewater rafting in Colorado">
+        </div>
+
+        <div class="paul-info-card reveal">
+          <h3>Paul J. Raymond</h3>
+          <p>Paul founded The Law Office of Paul J. Raymond in 2026 to help serve a growing gap in legal expertise in rural central Colorado.</p>
+          <p>His roots run deep in the Buena Vista and Gunnison outdoor communities. An avid mountain biker and fly fisherman, he embraces Colorado's wild beauty while focusing on water and property rights.</p>
+          <p>Paul's goal is to provide flexible and low-cost legal services to areas of Colorado without access to legal resources.</p>
+
+          <div class="paul-credentials">
+            <div class="credential">
+              <div class="credential-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+              </div>
+              <div class="credential-text">
+                <strong>Education</strong><br>
+                Western Colorado University (B.A.) &middot; University of Denver (J.D.)
+              </div>
+            </div>
+            <div class="credential">
+              <div class="credential-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div class="credential-text">
+                <strong>Licensed</strong><br>
+                State Bar of Colorado &middot; State Bar of New Mexico
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ TESTIMONIALS ═══════════ -->
+  <section class="testimonials" id="testimonials">
+    <div class="testimonials-inner">
+      <div class="testimonials-header reveal">
+        <h2 class="testimonials-title">Trusted by Our Rural Colorado Community</h2>
+      </div>
+
+      <div class="testimonial-card reveal">
+        <img class="testimonial-image" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=85&w=300&h=250&fit=crop" alt="Client portrait">
+        <div class="testimonial-content">
+          <p class="testimonial-text">Paul handled my water rights case with care and deep knowledge. His understanding of Colorado's unique water law landscape made all the difference. He kept me informed every step of the way.</p>
+          <div class="testimonial-author">Satisfied Client</div>
+          <div class="testimonial-role">Water Rights Case</div>
+        </div>
+        <div class="testimonial-stat">
+          <div class="testimonial-stat-number">100%</div>
+          <div class="testimonial-stat-label">Client Focused</div>
+        </div>
+      </div>
+
+      <div class="testimonial-card reveal">
+        <img class="testimonial-image" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=85&w=300&h=250&fit=crop" alt="Client portrait">
+        <div class="testimonial-content">
+          <p class="testimonial-text">Professional, approachable, and truly understands Colorado property law. Paul took the time to explain every detail and made a complex situation feel manageable.</p>
+          <div class="testimonial-author">Satisfied Client</div>
+          <div class="testimonial-role">Property Law</div>
+        </div>
+        <div class="testimonial-stat">
+          <div class="testimonial-stat-number">100%</div>
+          <div class="testimonial-stat-label">Transparent Process</div>
+        </div>
+      </div>
+
+      <div class="testimonial-card reveal">
+        <img class="testimonial-image" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=85&w=300&h=250&fit=crop" alt="Client portrait">
+        <div class="testimonial-content">
+          <p class="testimonial-text">I appreciated Paul's clear communication and dedication during my landlord dispute. He made a stressful situation much easier to navigate and fought hard for a fair resolution.</p>
+          <div class="testimonial-author">Satisfied Client</div>
+          <div class="testimonial-role">Landlord Tenant Dispute</div>
+        </div>
+        <div class="testimonial-stat">
+          <div class="testimonial-stat-number">100%</div>
+          <div class="testimonial-stat-label">Client Satisfaction</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ CTA ═══════════ -->
+  <section class="cta-section">
+    <div class="reveal">
+      <h2 class="cta-title">Your <em>Legal Solutions</em><br>Just a Click Away</h2>
+      <div class="cta-actions">
+        <a href="#contact" class="btn-white">Schedule a Consultation</a>
+        <a href="tel:+17192394801" class="btn-outline-dark">Call (719) 239-4801</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ CONTACT ═══════════ -->
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+      <div class="contact-info reveal">
+        <h2 class="contact-title">Ready to Discuss Your Case?</h2>
+        <p class="contact-subtitle">Reach out today for advice on water rights, property law, and more. We serve rural Colorado with flexible, affordable legal services.</p>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div>
+            <div class="contact-detail-label">Phone</div>
+            <div class="contact-detail-value"><a href="tel:+17192394801">(719) 239-4801</a></div>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <div class="contact-detail-label">Email</div>
+            <div class="contact-detail-value"><a href="mailto:Paul@PaulRaymondLaw.com">Paul@PaulRaymondLaw.com</a></div>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="contact-detail-label">Location</div>
+            <div class="contact-detail-value">Buena Vista, Colorado</div>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <div class="contact-detail-label">Office Hours</div>
+            <div class="contact-detail-value">Monday &ndash; Friday, 9am &ndash; 6pm</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-wrapper reveal">
+        <div class="contact-form-title">Schedule A Meeting</div>
+        <p class="contact-form-subtitle">Please send me a message with some of your available dates and we can set up an initial consultation.</p>
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell us about your legal matter and your availability for a consultation..." required></textarea>
+          </div>
+          <div class="form-consent">
+            <input type="checkbox" id="consent" required>
+            <label for="consent" style="text-transform: none; letter-spacing: 0; font-size: 0.82rem; font-weight: 400; margin-bottom: 0;">I consent to use of provided personal data for the purpose of responding to the request. I may withdraw my consent at any time.</label>
+          </div>
+          <button type="submit" class="form-submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <div class="footer-brand-name">The Law Office of Paul J. Raymond, LLC</div>
+          <p class="footer-brand-desc">Providing flexible and low-cost legal services to rural central Colorado since 2026.</p>
+        </div>
+        <div>
+          <div class="footer-heading">Quick Links</div>
+          <ul class="footer-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#practice">Practice Areas</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">Contact</div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <a href="tel:+17192394801">(719) 239-4801</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:Paul@PaulRaymondLaw.com">Paul@PaulRaymondLaw.com</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Buena Vista, Colorado
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">&copy; 2026 The Law Office of Paul J. Raymond, LLC. All rights reserved.</div>
+        <div class="footer-badges">
+          <div class="footer-badge">Colorado Bar</div>
+          <div class="footer-badge">New Mexico Bar</div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════ JS ═══════════ -->
+  <script>
+    /* Nav scroll */
+    const nav = document.getElementById('nav');
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 60);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    /* Mobile menu */
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      const spans = navToggle.querySelectorAll('span');
+      if (navLinks.classList.contains('open')) {
+        spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+        spans[1].style.opacity = '0';
+        spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+      } else {
+        spans[0].style.transform = '';
+        spans[1].style.opacity = '';
+        spans[2].style.transform = '';
+      }
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        const spans = navToggle.querySelectorAll('span');
+        spans[0].style.transform = '';
+        spans[1].style.opacity = '';
+        spans[2].style.transform = '';
+      });
+    });
+
+    /* Scroll reveal */
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    /* Form handler */
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+      const subject = encodeURIComponent('Consultation Request from ' + name);
+      const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\n' + message);
+      window.location.href = 'mailto:Paul@PaulRaymondLaw.com?subject=' + subject + '&body=' + body;
+    });
+  </script>
+</body>
+</html>
