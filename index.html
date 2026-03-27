@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Law Office of Paul J. Raymond, LLC | Buena Vista, Colorado</title>
-  <meta name="description" content="A general practice law firm serving rural Colorado's legal needs. Water rights, property law, civil litigation, and more in Buena Vista, CO.">
+  <meta name="description" content="Water rights, real property, outdoor recreation law, and civil matters for clients in Buena Vista and across rural Colorado.">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -185,8 +185,8 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 60%, rgba(0, 0, 0, 0.65) 100%),
-        url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;
+        linear-gradient(to bottom, rgba(7, 18, 33, 0.18) 0%, rgba(7, 18, 33, 0.42) 52%, rgba(7, 18, 33, 0.74) 100%),
+        url('hero-mountains.jpeg') center/cover no-repeat;
     }
 
     .hero-content {
@@ -494,21 +494,31 @@
 
     .about-paul-images {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.15fr 0.85fr;
+      grid-template-areas:
+        'primary secondary'
+        'primary tertiary';
       gap: 12px;
     }
     .about-paul-images img {
       width: 100%;
-      height: 240px;
+      height: 100%;
+      min-height: 220px;
       object-fit: cover;
       transition: transform 0.4s var(--ease-out-expo);
     }
     .about-paul-images img:hover {
       transform: scale(1.02);
     }
-    .about-paul-images img:first-child {
-      grid-column: 1 / -1;
-      height: 300px;
+    .about-paul-images .about-image-primary {
+      grid-area: primary;
+      min-height: 492px;
+    }
+    .about-paul-images .about-image-secondary {
+      grid-area: secondary;
+    }
+    .about-paul-images .about-image-tertiary {
+      grid-area: tertiary;
     }
 
     .paul-info-card {
@@ -576,105 +586,111 @@
     /* ═══════════════════════════════════════
        TESTIMONIALS
        ═══════════════════════════════════════ */
-    .testimonials {
+    .experience {
       padding: 7rem 3rem;
       background: var(--white);
     }
 
-    .testimonials-inner {
+    .experience-inner {
       max-width: 1100px;
       margin: 0 auto;
     }
 
-    .testimonials-header {
+    .experience-header {
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
+      gap: 2rem;
       margin-bottom: 3rem;
     }
 
-    .testimonials-title {
+    .experience-title {
       font-family: var(--font-display);
       font-weight: 400;
       font-size: clamp(2rem, 3.5vw, 2.8rem);
       line-height: 1.2;
       color: var(--black);
-      max-width: 500px;
+      max-width: 620px;
     }
 
-    .testimonials-link {
-      font-family: var(--font-body);
-      font-weight: 400;
-      font-size: 0.85rem;
-      color: var(--gray-600);
-      text-decoration: underline;
-      text-underline-offset: 4px;
-      transition: color 0.3s;
-      white-space: nowrap;
-    }
-    .testimonials-link:hover { color: var(--black); }
-
-    .testimonial-card {
-      display: grid;
-      grid-template-columns: 240px 1fr auto;
-      gap: 2rem;
-      padding: 2rem 0;
-      border-top: 1px solid var(--gray-200);
-      align-items: start;
-    }
-    .testimonial-card:last-child {
-      border-bottom: 1px solid var(--gray-200);
-    }
-
-    .testimonial-image {
-      width: 240px;
-      height: 200px;
-      object-fit: cover;
-      border: 1px solid var(--gray-200);
-    }
-
-    .testimonial-content {
-      padding-top: 0.25rem;
-    }
-
-    .testimonial-text {
+    .experience-subtitle {
       font-family: var(--font-body);
       font-weight: 300;
       font-size: 0.92rem;
-      line-height: 1.8;
+      line-height: 1.7;
       color: var(--gray-600);
-      margin-bottom: 1.5rem;
+      max-width: 360px;
     }
 
-    .testimonial-author {
-      font-family: var(--font-body);
-      font-weight: 600;
-      font-size: 0.92rem;
-      color: var(--black);
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.25rem;
     }
-    .testimonial-role {
+
+    .experience-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      padding: 2rem;
+      min-height: 310px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .experience-eyebrow {
       font-family: var(--font-body);
-      font-weight: 400;
-      font-size: 0.82rem;
+      font-weight: 500;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
       color: var(--gray-400);
-      margin-top: 0.15rem;
+      margin-bottom: 1rem;
     }
 
-    .testimonial-stat {
-      text-align: right;
-      padding-top: 0.5rem;
-    }
-    .testimonial-stat-number {
+    .experience-card h3 {
       font-family: var(--font-display);
-      font-size: 2.5rem;
+      font-weight: 400;
+      font-size: 1.55rem;
+      line-height: 1.2;
       color: var(--black);
-      line-height: 1;
+      margin-bottom: 1rem;
     }
-    .testimonial-stat-label {
+
+    .experience-card p {
       font-family: var(--font-body);
-      font-size: 0.75rem;
-      color: var(--gray-400);
-      margin-top: 0.25rem;
+      font-weight: 300;
+      font-size: 0.92rem;
+      line-height: 1.75;
+      color: var(--gray-600);
+    }
+
+    .experience-list {
+      list-style: none;
+      margin-top: auto;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--gray-200);
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .experience-list li {
+      position: relative;
+      padding-left: 1rem;
+      font-size: 0.85rem;
+      line-height: 1.55;
+      color: var(--gray-600);
+    }
+
+    .experience-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.6em;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--black);
     }
 
     /* ═══════════════════════════════════════
@@ -682,7 +698,9 @@
        ═══════════════════════════════════════ */
     .cta-section {
       padding: 7rem 3rem;
-      background: var(--black);
+      background:
+        linear-gradient(rgba(8, 10, 15, 0.72), rgba(8, 10, 15, 0.82)),
+        url('alpine-stars.jpg') center/cover no-repeat;
       text-align: center;
     }
 
@@ -1013,10 +1031,16 @@
       .nav { padding: 1.25rem 2rem; }
       .nav.scrolled { padding: 0.85rem 2rem; }
       .hero-content { padding: 0 2rem 4rem; }
-      .about, .practice, .about-paul, .testimonials, .cta-section, .contact { padding-left: 2rem; padding-right: 2rem; }
+      .about, .practice, .about-paul, .experience, .cta-section, .contact { padding-left: 2rem; padding-right: 2rem; }
 
       .about-paul-grid { grid-template-columns: 1fr; }
-      .about-paul-images img:first-child { height: 250px; }
+      .about-paul-images {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+          'primary primary'
+          'secondary tertiary';
+      }
+      .about-paul-images .about-image-primary { min-height: 280px; }
 
       .practice-item {
         grid-template-columns: auto 1fr;
@@ -1024,12 +1048,13 @@
       }
       .practice-desc { grid-column: 1 / -1; max-width: none; }
 
-      .testimonial-card {
+      .experience-grid {
         grid-template-columns: 1fr;
-        gap: 1rem;
       }
-      .testimonial-image { width: 100%; height: 200px; }
-      .testimonial-stat { text-align: left; }
+      .experience-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
 
       .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
       .footer-top { grid-template-columns: 1fr; gap: 2rem; }
@@ -1066,7 +1091,7 @@
       .hero-content { padding: 0 1.5rem 3rem; }
       .hero-title { font-size: 2.2rem; }
       .hero-scroll { display: none; }
-      .about, .practice, .about-paul, .testimonials, .cta-section, .contact { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .about, .practice, .about-paul, .experience, .cta-section, .contact { padding-left: 1.5rem; padding-right: 1.5rem; }
 
       .practice-item {
         grid-template-columns: 1fr;
@@ -1075,8 +1100,15 @@
       .practice-number { display: none; }
 
       .about-paul-header { flex-direction: column; }
-      .about-paul-images img { height: 180px; }
-      .about-paul-images img:first-child { height: 200px; }
+      .about-paul-images {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          'primary'
+          'secondary'
+          'tertiary';
+      }
+      .about-paul-images img,
+      .about-paul-images .about-image-primary { min-height: 200px; }
       .paul-info-card { padding: 2rem 1.5rem; }
 
       .contact-form-wrapper { padding: 2rem 1.5rem; }
@@ -1095,7 +1127,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#practice">Practice Areas</a></li>
       <li><a href="#paul">About Paul</a></li>
-      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#experience">Experience</a></li>
       <li><a href="#contact" class="nav-cta">Schedule Consultation</a></li>
     </ul>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
@@ -1108,8 +1140,8 @@
     <div class="hero-bg"></div>
     <div class="hero-content">
       <div class="hero-pretitle">The Law Office of Paul J. Raymond, LLC</div>
-      <h1 class="hero-title">Trusted <span class="underline">Counsel.</span><br>Smart <em>Strategy.</em><br>Just for <em>Rural Colorado.</em></h1>
-      <p class="hero-subtitle">Whether you need help with water rights, property law, or civil litigation, we provide flexible, low-cost legal services to rural communities.</p>
+      <h1 class="hero-title">Grounded in <span class="underline">Water.</span><br>Land, <em>Access,</em><br>and <em>Colorado's Outdoors.</em></h1>
+      <p class="hero-subtitle">The Law Office of Paul J. Raymond, LLC advises landowners, municipalities, outfitters, and businesses across rural Colorado on water rights, real property, outdoor recreation matters, and civil disputes.</p>
       <div class="hero-actions">
         <a href="#contact" class="btn-primary">Schedule a Consultation</a>
         <a href="#practice" class="btn-text">Practice Areas</a>
@@ -1126,21 +1158,21 @@
     <div class="about-inner">
       <div class="section-label reveal">About Us</div>
       <p class="about-text reveal">
-        We combine deep legal expertise, a commitment to rural communities, and a hands-on approach to help you navigate Colorado's unique legal landscape. With a foundation in water rights, property law, and civil litigation, we deliver results that matter&mdash;whether it's protecting your land, resolving a dispute, or planning for the future.
+        Paul J. Raymond brings a water-law foundation, real property experience, and a background in recreation and outdoor education to clients throughout central Colorado. His practice is built for people and businesses whose work is tied to land, water, community, and the outdoor economy.
       </p>
 
       <div class="stats-grid reveal">
         <div class="stat-card">
-          <div class="stat-number">2</div>
-          <div class="stat-label">State Bar Licenses</div>
+          <div class="stat-number">CO + NM</div>
+          <div class="stat-label">State Bar Admissions</div>
         </div>
         <div class="stat-card">
-          <div class="stat-number">6+</div>
-          <div class="stat-label">Practice Areas</div>
+          <div class="stat-number">7</div>
+          <div class="stat-label">Core Practice Areas</div>
         </div>
         <div class="stat-card">
-          <div class="stat-number">100%</div>
-          <div class="stat-label">Dedicated to Rural Colorado</div>
+          <div class="stat-number">WCU &rarr; DU</div>
+          <div class="stat-label">Recreation &amp; Outdoor Education to Water Law</div>
         </div>
       </div>
     </div>
@@ -1155,52 +1187,61 @@
         <div class="practice-number">[01]</div>
         <h3 class="practice-name">Water Rights</h3>
         <div>
-          <p class="practice-desc">Expert guidance on water and property rights in Colorado's unique landscape. We help you understand and protect your water resources.</p>
+          <p class="practice-desc">Counsel on water rights transactions, adjudications, augmentation plans, exchanges, storage applications, and protecting existing rights in Colorado water court proceedings.</p>
           <a href="#contact" class="practice-link">Learn More</a>
         </div>
       </div>
 
       <div class="practice-item reveal">
         <div class="practice-number">[02]</div>
-        <h3 class="practice-name">Landlord Tenant Law</h3>
+        <h3 class="practice-name">Outdoor Recreation Law</h3>
         <div>
-          <p class="practice-desc">Resolving landlord and tenant issues with fairness and clarity. From lease agreements to eviction proceedings, we have you covered.</p>
+          <p class="practice-desc">Practical legal support for rental shops, guides, event organizers, outfitters, and recreation businesses&mdash;including liability waivers, event permitting, insurance review, contracts, and day-to-day counsel.</p>
           <a href="#contact" class="practice-link">Learn More</a>
         </div>
       </div>
 
       <div class="practice-item reveal">
         <div class="practice-number">[03]</div>
-        <h3 class="practice-name">Land Use &amp; Real Property</h3>
+        <h3 class="practice-name">Landlord Tenant Law</h3>
         <div>
-          <p class="practice-desc">Guidance on property transactions, zoning, easements, and real estate matters across rural Colorado.</p>
+          <p class="practice-desc">Resolving landlord and tenant issues with fairness and clarity, from lease drafting and compliance questions to disputes and possession matters.</p>
           <a href="#contact" class="practice-link">Learn More</a>
         </div>
       </div>
 
       <div class="practice-item reveal">
         <div class="practice-number">[04]</div>
-        <h3 class="practice-name">Civil Litigation</h3>
+        <h3 class="practice-name">Land Use &amp; Real Property</h3>
         <div>
-          <p class="practice-desc">Skilled representation in civil matters, from contract disputes to personal injury claims.</p>
+          <p class="practice-desc">Guidance on land use planning, zoning, easements, due diligence, development of real property, and transactions across Colorado's rural communities.</p>
           <a href="#contact" class="practice-link">Learn More</a>
         </div>
       </div>
 
       <div class="practice-item reveal">
         <div class="practice-number">[05]</div>
-        <h3 class="practice-name">Traffic &amp; DUI Defense</h3>
+        <h3 class="practice-name">Civil Litigation</h3>
         <div>
-          <p class="practice-desc">Dedicated defense for traffic violations and DUI charges, protecting your rights and driving record.</p>
+          <p class="practice-desc">Focused representation in civil disputes involving contracts, property, access, and other matters where practical strategy and clear advocacy matter.</p>
           <a href="#contact" class="practice-link">Learn More</a>
         </div>
       </div>
 
       <div class="practice-item reveal">
         <div class="practice-number">[06]</div>
+        <h3 class="practice-name">Traffic &amp; DUI Defense</h3>
+        <div>
+          <p class="practice-desc">Dedicated defense for traffic violations and DUI charges, with straightforward advice aimed at protecting your rights, record, and ability to keep moving.</p>
+          <a href="#contact" class="practice-link">Learn More</a>
+        </div>
+      </div>
+
+      <div class="practice-item reveal">
+        <div class="practice-number">[07]</div>
         <h3 class="practice-name">Estate Planning &amp; Family Law</h3>
         <div>
-          <p class="practice-desc">Wills, trusts, and family legal matters handled with care and sensitivity for your family's future.</p>
+          <p class="practice-desc">Wills, trusts, and family legal matters handled with care, clarity, and an eye toward long-term peace of mind for Colorado families.</p>
           <a href="#contact" class="practice-link">Learn More</a>
         </div>
       </div>
@@ -1211,20 +1252,21 @@
   <section class="about-paul" id="paul">
     <div class="about-paul-inner">
       <div class="about-paul-header reveal">
-        <h2 class="about-paul-title">Meet the Attorney Behind the Practice</h2>
+        <h2 class="about-paul-title">Built for Colorado clients who live close to the land</h2>
       </div>
 
       <div class="about-paul-grid">
         <div class="about-paul-images reveal">
-          <img src="paul-canyon.png" alt="Paul working remotely in a canyon in Colorado">
-          <img src="paul-rafting.png" alt="Paul enjoying whitewater rafting in Colorado">
+          <img class="about-image-primary" src="paul-canyon.png" alt="Paul working remotely in a canyon in Colorado">
+          <img class="about-image-secondary" src="paul-rafting.png" alt="Paul enjoying whitewater rafting in Colorado">
+          <img class="about-image-tertiary" src="river-outfitter.jpeg" alt="Rafts and riverbank in rural Colorado">
         </div>
 
         <div class="paul-info-card reveal">
           <h3>Paul J. Raymond</h3>
-          <p>Paul founded The Law Office of Paul J. Raymond in 2026 to help serve a growing gap in legal expertise in rural central Colorado.</p>
-          <p>His roots run deep in the Buena Vista and Gunnison outdoor communities. An avid mountain biker and fly fisherman, he embraces Colorado's wild beauty while focusing on water and property rights.</p>
-          <p>Paul's goal is to provide flexible and low-cost legal services to areas of Colorado without access to legal resources.</p>
+          <p>Paul earned his Juris Doctor from the University of Denver Sturm College of Law and his B.A. in Recreation and Outdoor Education, with a minor in History, from Western Colorado University, graduating magna cum laude.</p>
+          <p>His legal work has focused on water rights, transactions, adjudications, land use planning, real estate matters, and development issues for municipalities, special districts, ranch and large property owners, and developers.</p>
+          <p>That mix of legal training and outdoor experience also makes him a natural fit for recreation businesses, rental operations, and outfitters looking for practical counsel on risk, access, and operations.</p>
 
           <div class="paul-credentials">
             <div class="credential">
@@ -1233,7 +1275,7 @@
               </div>
               <div class="credential-text">
                 <strong>Education</strong><br>
-                Western Colorado University (B.A.) &middot; University of Denver (J.D.)
+                University of Denver Sturm College of Law (J.D.) &middot; Western Colorado University (B.A., Magna Cum Laude)
               </div>
             </div>
             <div class="credential">
@@ -1241,8 +1283,26 @@
                 <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
               </div>
               <div class="credential-text">
-                <strong>Licensed</strong><br>
+                <strong>Admissions</strong><br>
                 State Bar of Colorado &middot; State Bar of New Mexico
+              </div>
+            </div>
+            <div class="credential">
+              <div class="credential-icon">
+                <svg viewBox="0 0 24 24"><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 4h10"/><path d="M17 4v4a5 5 0 01-10 0V4"/></svg>
+              </div>
+              <div class="credential-text">
+                <strong>Leadership &amp; Honors</strong><br>
+                Articles Editor &amp; Staff Editor, Water Law Review &middot; Reese Persuasive Writing Award &middot; Eastman Achievement Award
+              </div>
+            </div>
+            <div class="credential">
+              <div class="credential-icon">
+                <svg viewBox="0 0 24 24"><path d="M3 12h18"/><path d="M12 3v18"/><circle cx="12" cy="12" r="9"/></svg>
+              </div>
+              <div class="credential-text">
+                <strong>Professional Involvement</strong><br>
+                Colorado Bar Association &middot; Colorado Bar Association Water Section
               </div>
             </div>
           </div>
@@ -1251,49 +1311,46 @@
     </div>
   </section>
 
-  <!-- ═══════════ TESTIMONIALS ═══════════ -->
-  <section class="testimonials" id="testimonials">
-    <div class="testimonials-inner">
-      <div class="testimonials-header reveal">
-        <h2 class="testimonials-title">Trusted by Our Rural Colorado Community</h2>
+  <!-- ═══════════ REPRESENTATIVE EXPERIENCE ═══════════ -->
+  <section class="experience" id="experience">
+    <div class="experience-inner">
+      <div class="experience-header reveal">
+        <h2 class="experience-title">Representative experience shaped by Colorado water, land, and community needs</h2>
+        <p class="experience-subtitle">A factual snapshot of the kinds of matters Paul's background is built for&mdash;from water court to development planning to the realities of outdoor businesses.</p>
       </div>
 
-      <div class="testimonial-card reveal">
-        <img class="testimonial-image" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=85&w=300&h=250&fit=crop" alt="Client portrait">
-        <div class="testimonial-content">
-          <p class="testimonial-text">Paul handled my water rights case with care and deep knowledge. His understanding of Colorado's unique water law landscape made all the difference. He kept me informed every step of the way.</p>
-          <div class="testimonial-author">Satisfied Client</div>
-          <div class="testimonial-role">Water Rights Case</div>
+      <div class="experience-grid">
+        <div class="experience-card reveal">
+          <div class="experience-eyebrow">Water Law</div>
+          <h3>Water rights, transactions, and adjudications</h3>
+          <p>Paul has worked on water matters involving both planning and litigation-facing process, helping clients protect and position critical water assets in Colorado.</p>
+          <ul class="experience-list">
+            <li>Surface and groundwater right adjudications</li>
+            <li>Augmentation plans, exchanges, and storage applications</li>
+            <li>Protecting rights from injury in water court proceedings</li>
+          </ul>
         </div>
-        <div class="testimonial-stat">
-          <div class="testimonial-stat-number">100%</div>
-          <div class="testimonial-stat-label">Client Focused</div>
-        </div>
-      </div>
 
-      <div class="testimonial-card reveal">
-        <img class="testimonial-image" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=85&w=300&h=250&fit=crop" alt="Client portrait">
-        <div class="testimonial-content">
-          <p class="testimonial-text">Professional, approachable, and truly understands Colorado property law. Paul took the time to explain every detail and made a complex situation feel manageable.</p>
-          <div class="testimonial-author">Satisfied Client</div>
-          <div class="testimonial-role">Property Law</div>
+        <div class="experience-card reveal">
+          <div class="experience-eyebrow">Property &amp; Development</div>
+          <h3>Land use, real estate, and due diligence</h3>
+          <p>His practice also covers the real-world property issues that shape rural projects, transactions, and long-term planning across central Colorado.</p>
+          <ul class="experience-list">
+            <li>Land use planning and development of real property</li>
+            <li>Real estate transactions and due diligence matters</li>
+            <li>Advice for ranch, large property, and developer clients</li>
+          </ul>
         </div>
-        <div class="testimonial-stat">
-          <div class="testimonial-stat-number">100%</div>
-          <div class="testimonial-stat-label">Transparent Process</div>
-        </div>
-      </div>
 
-      <div class="testimonial-card reveal">
-        <img class="testimonial-image" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=85&w=300&h=250&fit=crop" alt="Client portrait">
-        <div class="testimonial-content">
-          <p class="testimonial-text">I appreciated Paul's clear communication and dedication during my landlord dispute. He made a stressful situation much easier to navigate and fought hard for a fair resolution.</p>
-          <div class="testimonial-author">Satisfied Client</div>
-          <div class="testimonial-role">Landlord Tenant Dispute</div>
-        </div>
-        <div class="testimonial-stat">
-          <div class="testimonial-stat-number">100%</div>
-          <div class="testimonial-stat-label">Client Satisfaction</div>
+        <div class="experience-card reveal">
+          <div class="experience-eyebrow">Public &amp; Outdoor Economy</div>
+          <h3>Municipal, district, and recreation business counsel</h3>
+          <p>Paul's background extends to public-sector water planning and to the practical legal needs of operators working in Colorado's outdoor economy.</p>
+          <ul class="experience-list">
+            <li>Municipal law and special district formation</li>
+            <li>Water portfolio management and resource planning</li>
+            <li>Waivers, permitting, insurance review, and contracts for outfitters</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -1302,7 +1359,7 @@
   <!-- ═══════════ CTA ═══════════ -->
   <section class="cta-section">
     <div class="reveal">
-      <h2 class="cta-title">Your <em>Legal Solutions</em><br>Just a Click Away</h2>
+      <h2 class="cta-title">Counsel for <em>Water, Land,</em><br>and the Outdoor Economy</h2>
       <div class="cta-actions">
         <a href="#contact" class="btn-white">Schedule a Consultation</a>
         <a href="tel:+17192394801" class="btn-outline-dark">Call (719) 239-4801</a>
@@ -1315,7 +1372,7 @@
     <div class="contact-inner">
       <div class="contact-info reveal">
         <h2 class="contact-title">Ready to Discuss Your Case?</h2>
-        <p class="contact-subtitle">Reach out today for advice on water rights, property law, and more. We serve rural Colorado with flexible, affordable legal services.</p>
+        <p class="contact-subtitle">Reach out to discuss water rights, property issues, outdoor recreation law, or other civil matters. We serve Buena Vista and rural Colorado with practical, approachable counsel.</p>
 
         <div class="contact-detail">
           <div class="contact-detail-icon">
@@ -1390,14 +1447,14 @@
       <div class="footer-top">
         <div>
           <div class="footer-brand-name">The Law Office of Paul J. Raymond, LLC</div>
-          <p class="footer-brand-desc">Providing flexible and low-cost legal services to rural central Colorado since 2026.</p>
+          <p class="footer-brand-desc">Practical counsel for water, land, recreation, and civil matters in Buena Vista and across rural Colorado.</p>
         </div>
         <div>
           <div class="footer-heading">Quick Links</div>
           <ul class="footer-links">
             <li><a href="#about">About</a></li>
             <li><a href="#practice">Practice Areas</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#experience">Experience</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
